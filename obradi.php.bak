@@ -1,0 +1,42 @@
+﻿<html>
+	<head> 
+		<title> Obrada podataka za kontakt </title>
+	</head>
+
+	<body>
+		<?php
+
+		/* tekstualne kontrole */
+		$mail=$_GET['email'];
+		$ime=$_GET['subject'];
+		$poruka=$_GET['message'];
+		$mojmejl="mi09036@alas.matf.bg.ac.rs";
+
+		/* obrada podataka */
+
+		/*1: kreiranje niza sa imenima osoba */
+		$imena=explode(',', $poruka);
+
+		/*2: uklanjanje belina sa pocetka i kraja */
+		for($i=0;$i<count($imena);$i++)
+			$imena[$i]=trim($imena[$i]);
+			
+		echo "Vasa poruka je uspešno poslata !<br/>";
+
+		/* 3: formatiranje ispisa */
+		echo "email-a: $mail <br/>"; 
+		echo "име: $ime <br/>";
+		foreach($imena as $ime)
+			echo "<span>$email</span> <br/>\n";
+			echo "<span>$ime</span> <br/>\n";
+		echo "<br/>";
+		
+		/* slanje poruke na mail */
+		mail($mojmejl, "poruka sa sajta", $poruka, $mail);
+
+		?>
+
+
+		
+	</body>
+</html>

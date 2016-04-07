@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Zdrava hrana | GAUS </title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <link rel="shortcut icon" href="style/favicon.ico" type="image/x-icon" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+  
+  <script type="text/javascript">
+  function provera()
+  {
+
+  var ime = document.getElementById("subject").value;
+  var email = document.getElementById("email").value;
+  var poruka = document.getElementById("message").value;
+  var cek = document.getElementById("email").value.indexOf("@");
+
+	if(ime == "")
+	{
+		window.alert("Niste uneli ime!");
+		return false;
+	}
+	else
+	if(poruka == "")
+	{
+		window.alert("Niste uneli poruku!");
+		return false;
+	}
+	else
+	if(email == ""){
+		alert('Niste uneli e-mail!');
+		return false;}
+		else if(cek==-1)
+		{
+		 window.alert("Niste uneli dobar e-mail!");
+		 document.getElementById('email').value="";
+		 return false;
+		}
+	else
+	    window.alert("Formular ispravno popunjen i poruka poslata");
+		
+  }
+  function dugme()
+  {
+  var pitanje=window.confirm("Da li ste sigurni da Å¾elite da posaljete poruku?");
+  if(pitanje == true)
+   { 
+    provera();
+	if(provera() != false){
+	document.forms["myform"].submit();}
+   }
+  }
+  </script>
+  
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <h1><a href="pocetna.html">Zdrava hrana<span class="logo_colour"> Gaus</span></a></h1>
+          <h2>online radnja i savetovalište zdravlja</h2>
+          <h2>
+             <script type="text/javascript">
+			    var d=new Date(); 
+	            var weekday=new Array("Nedelja","Ponedeljak","Utorak","Sreda","Cetvrtak","Petak", "Subota");
+	            var monthname=new Array("Jan","Feb","Mar","Apr","Maj","Jun","Jul","Avg","Sep","Oct","Nov","Dec"); 
+	 			document.write(weekday[d.getDay()] + " ");
+				document.write(d.getDate() + ". "); 
+				document.write(monthname[d.getMonth()] + " ");
+				document.write(d.getFullYear());
+			 </script>
+  		  </h2>		  
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <li><a href="pocetna.html">Po&#269;etna</a></li>
+          <li><a href="proizvodi.php">Proizvodi</a></li>
+          <li><a href="onama.html">O nama</a></li>
+          <li><a href="eprodavnica.php">E-Prodavnica</a></li>
+          <li><a href="korpa.php">Vaša korpa</a></li>
+          <li class="selected"><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+      <div id="content">
+        <h1>Kontaktirajte nas</h1>
+        <form action="obradi.php" method="get" id="myform">
+          <div class="form_settings">
+            <p><span>Ime</span><input class="contact" type="text" id="subject" name="subject" value="" /></p>
+            <p><span>Email adresa</span><input class="contact" type="text" id="email" name="email" value="" /></p>
+            <p><span>Poruka</span><textarea class="contact textarea" rows="8" cols="50" id="message" name="message" ></textarea></p>
+            <p style="padding-top: 15px"><input class="submit" value="Pošalji" type="button" onclick="dugme()" /></p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+      Copyright &copy; Sale | <a href="http://validator.w3.org/check?uri=referer">HTML Validacija</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>
+    </div>
+  </div>
+</body>  
+</html>

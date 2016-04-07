@@ -1,0 +1,10 @@
+﻿<?php
+    		$id_kupovine=1;
+			$id_kupca=1;
+			$kolicina=$HTTP_POST_VARS['amount'];
+			$id_proizvoda=$HTTP_POST_VARS['id'];
+
+            $query = "insert into kupovina values ('".$id_kupovine."', '".$id_kupca."', '".$id_proizvoda."','".$kolicina."')"; 
+
+			$result = mysql_query($query);
+     ?>
